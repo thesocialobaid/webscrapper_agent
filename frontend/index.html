@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DataScrape AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Scrape Any URL</h1>
+
+      <!-- Label and input for URL -->
+      <label for="urlInput">Website URL</label>
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="Paste URL here"
+        aria-label="Website URL"
+      />
+
+      <!-- Label and textarea for instructions -->
+      <label for="instructions">Scraping Instructions</label>
+      <textarea
+        id="instructions"
+        placeholder="Describe what to extract (optional)"
+        aria-label="Instructions"
+      ></textarea>
+
+      <!-- Scrape button -->
+      <button id="scrapeBtn" aria-label="Start Scraping">Scrape Data</button>
+
+      <!-- Status update -->
+      <div id="status" role="status" aria-live="polite"></div>
+
+      <!-- Preview output -->
+      <label for="resultPreview">Result Preview</label>
+      <textarea
+        id="resultPreview"
+        readonly
+        aria-label="Scraped data preview"
+      ></textarea>
+
+      <!-- Download buttons -->
+      <div class="download-buttons" aria-label="Download options">
+        <button onclick="download('json')" aria-label="Download as JSON">Download JSON</button>
+        <button onclick="download('pdf')" aria-label="Download as PDF">Download PDF</button>
+      </div>
+    </div>
+  </body>
+</html>
